@@ -11,7 +11,7 @@ class PasswordValidator
 
   def parse_data(data)
     parsed = []
-    data.map do |line|
+    data.each do |line|
       symbol, range, password = line.split(' ')
       min, max = range.scan(/\d+/).map(&:to_i)
       parsed.append({ symbol: symbol, min: min, max: max, password: password })
